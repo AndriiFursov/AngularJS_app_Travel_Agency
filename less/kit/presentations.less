@@ -1,0 +1,116 @@
+/*
+ * For index.less
+*/
+/*------------------------------------*\
+    #SECTION-PRESENTATIONS
+\*------------------------------------*/            
+    
+.presentation__wrapper { 
+    float: left;
+    padding-top: 25px;
+    padding-left: 25px;
+}
+
+
+.presentation__metainfo {
+    display: none;
+}
+
+
+.presentation {
+    position: relative;
+    height: 430px;
+    font-size: 0.875rem;
+
+
+    >a {
+        text-decoration: none;
+        text-align: left;
+        color: @c-txt-presentation;
+        
+        
+        h2,
+        p, 
+        >div:not(.presentation__img) {
+            padding: 10px 15px 0;
+        }
+    }
+}
+
+
+.presentation__header {
+    height: 70px;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+
+.presentation__img {
+    position: relative; 
+
+
+    img {
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        max-height: 230px;
+    }
+}
+
+
+.price-label {
+    position: absolute;
+    right: 5px;
+    bottom: 7px;
+    height: 100px;
+    width: 100px;
+    background: url("../img/10_k_sm_v1.png") no-repeat; 
+    background-size: contain;
+    font-size: 22px;
+    color: @c-txt-price;
+
+
+    div:first-child {
+        position: absolute;
+        left: 10px;
+        top: 9px;
+    }
+    
+    div:last-child {
+        position: absolute;
+        right: 8px;
+        bottom: 27px;
+        text-align: right;
+    }
+}
+
+
+.presentation__promo-text {
+    font-size: 0.9em;
+    line-height: 1.4em;
+}
+
+
+.presentation__service-info {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+
+    
+    >div {
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        padding: 5px 0 5px 30px;
+        background: url("../img/time_i.png") no-repeat left center;
+    }
+
+    .tour-id {
+            float: right;
+            font-size: 0.8em;
+            padding-top: 2px;
+    }
+}
+/* PRESENTATIONS-END */

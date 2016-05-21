@@ -1,0 +1,333 @@
+/*
+ * Styles for index.html
+*/
+
+/* Variables */
+@c-border:           #cccccc;
+@c-txt-button:        lighten(#191919, 25%);
+@c-txt-presentation: #3a3435;
+@c-txt-price:        #ffffff;
+@c-txt-phones:       #5b5b5b;
+@c-txt-footer:       #ffffff;
+@c-bg-footer:        #4d4d4d;
+@c-txt-attention-s:  #db4437;
+
+/* main colors */
+@c-hotest:       #27bf15;
+@c-hotest-grad:  #fdfefd;
+@c-hot:          #cc2f3a;
+@c-hot-grad:     #fefdfd;
+@c-premium:      #ff9d00;
+@c-premium-grad: #fffefc;
+@c-extrim:       #1966aa;
+@c-extrim-grad:  #fdfdfe;
+@c-country:      #969696;
+@c-about:        #9eb3ff;
+@c-blog:         #ff9d00;
+@c-request:      #27bf15;
+
+/* carousel */
+@c-controls-bg:   rgba(255,255,255,0.3);
+@c-controls-bord: rgba(158,179,255,0.5);
+@c-controls-b-h:  rgba(158,179,255,0);
+@c-controls-act:  rgba(158,179,255,1);
+
+/* tour details */
+@c-bg-info: #e9e9e9;
+
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-TOTAL
+\*------------------------------------*/
+
+@import "grid.less";
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body { 
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    font-family: Helvetica, 'Open Sans', Arial, sans-serif; 
+}
+
+.wrapper {
+    height: 100%;
+    min-width: 600px;
+    overflow: hidden; // fix vertical scrollbar 
+}
+
+*:focus {
+    outline: none;
+}
+/* TOTAL-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-ASIDE
+\*------------------------------------*/
+
+aside {
+    float: left;
+    height: 100%;
+    width: 134px;
+    
+    
+    .logo {
+        height: 85px;
+        padding-top: 4px;
+        border-bottom: 1px solid @c-border;
+        text-align: center;
+    }
+    
+    
+    .filters {
+        height: -webkit-calc(~"100% - 85px");
+        height:    -moz-calc(~"100% - 85px");
+        height:         calc(~"100% - 85px"); // for correct LESS handling
+        padding-left: 10px;
+        border-right: 1px solid @c-border;
+        
+        
+        button, .but {
+            height: -webkit-calc(~"(100% - 150px)/5");
+            height:    -moz-calc(~"(100% - 150px)/5");
+            height:         calc(~"(100% - 150px)/5"); // 6*25 = 150px
+            width: 105px;
+            margin-top: 25px;
+        }
+    }
+}
+/* ASIDE-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-HEADER
+\*------------------------------------*/
+
+/* mobile operators*/
+[class*=mobo-] {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    margin-right: 5px;
+    background-size: cover;    
+    width: 10px;
+    height: 10px;
+}
+
+@import "kit/mobo.less";
+
+
+header {
+    height: 135px;
+    margin-left: 134px;
+
+
+    .row {
+        padding: 0 25px 0 0;
+    }
+    
+    
+    .header__top {
+        height: 85px;
+        border-bottom: 1px solid @c-border;
+    }
+    
+    
+    .contacts, .btn {
+        padding-top: 10px;
+    }
+    
+    
+    .contacts {
+        padding-left: 25px;
+        font-size: 0.65rem;
+        line-height: 0.87rem;
+        color: @c-txt-phones;
+        
+        
+        :last-child {
+            font-size: 0.6rem;
+        }
+    }
+
+
+    .btn {
+        text-align: left;
+        
+        
+        button {
+            height: 60px;
+            width: 85%;
+            padding: 0;
+            font-family: Helvetica, 'Open Sans', Arial, sans-serif; 
+            font-size: 0.7rem;
+            
+            
+            &.blog {
+                opacity: 0.3;
+                
+                &:hover {
+                    top:  0px;
+                    left: 0px;
+                    -webkit-box-shadow: 2px 2px 3px #666666;
+                       -moz-box-shadow: 2px 2px 3px #666666;
+                            box-shadow: 2px 2px 3px #666666;
+                }
+            }
+        }
+        
+        &:last-child button {
+            width: 100%
+        }
+    }
+    
+    
+    .header__bottom {
+        height: 50px;
+        padding-top: 7px;
+        border-bottom: 1px solid @c-border;
+        
+        
+        a {
+            float: right;
+            margin-left: 10px;
+        }
+    }
+}
+/* HEADER-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-MAIN
+\*------------------------------------*/
+
+main {
+    height: -webkit-calc(~"100% - 84px - 50px");
+    height:    -moz-calc(~"100% - 84px - 50px");
+    height:         calc(~"100% - 84px - 50px");
+    margin-left: 134px;
+    padding: 0 5px 0 0;
+    overflow: auto;
+    
+    
+    .tours-wrapper{
+        min-height: 100%;
+    }
+    
+    
+    .footer {
+        height: 50px;
+    }
+    
+    
+    .gasket {
+        height: 25px;
+    }
+}
+
+@import "kit/presentations.less";
+@import "kit/countrieslist.less";
+@import "kit/tourrequestform.less";
+@import "kit/loginform.less";
+@import "kit/gotopbutton.less";
+/* MAIN-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-TOUR
+\*------------------------------------*/
+
+@import "kit/carousel.less";
+@import "kit/tour.less";
+/* TOUR-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-ABOUT
+\*------------------------------------*/
+
+@import "kit/about.less";
+/* ABOUT-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-FOOTER
+\*------------------------------------*/
+
+footer {
+    height: 50px;
+    margin-top: -50px;
+    padding: 12px 50px 0 50px;
+    background-color: @c-bg-footer;
+    font-size: 0.75rem;
+    color: @c-txt-footer;
+    text-align: center;
+    
+    
+    a {
+        color: @c-txt-footer;
+    }
+    
+    
+    img {
+        position: relative;
+        top: 3px;
+        left: 5px;
+        width: 16px;
+        height: auto;
+        
+    }
+}
+/* FOOTER-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-RESPONSIVE
+\*------------------------------------*/
+
+@import "kit/responsive.less";
+/* RESPONSIVE-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-VIEW
+\*------------------------------------*/
+
+@import "kit/view.less";
+/* VIEW-END */

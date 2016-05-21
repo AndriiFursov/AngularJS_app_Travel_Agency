@@ -1,0 +1,37 @@
+<div class="col-min-12  col-660-6  col-920-4  col-1200-3  col-1600-2 
+presentation__wrapper" ng-repeat="tour in tours()" ng-if="tour.show">
+    <article class="presentation  {{tour.type}}">
+        <a href="#!/tour/{{tour.id}}">
+
+            <div class="presentation__metainfo"> 
+                country: {{tour.countrycode}}
+            </div>
+
+            <h2 class="presentation__header">
+                {{tour.tagline}}
+            </h2>
+
+            <div class="presentation__img">
+                <img ng-src="tour-img/{{tour.id}}.jpg" alt="{{tour.id}}.jpg" width="300" height="190"  resize-img-directive>
+                <div class="price-label">
+                    <div></div>
+                    <div>{{tour.price}} {{tour.currency}}</div>
+                </div>
+            </div>
+
+            <p class="presentation__promo-text">
+                {{tour.countryname}}! {{tour.city}}, {{tour.hotel}}, {{tour.price}} {{tour.currency}} for {{tour.people}}! Departure from {{tour.from}} {{tour.departure}} for {{tour.duration}} days!
+            </p>
+
+            <div class="presentation__service-info">
+                <div>
+                    <b>{{tour.added}}</b>
+                    <div class="tour-id">ID {{tour.id}}</div>
+                </div>
+            </div>
+
+        </a>
+    </article>
+</div>
+
+<div class="col-min-12  gasket"></div>

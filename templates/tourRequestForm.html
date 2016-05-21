@@ -1,0 +1,66 @@
+<section>
+    <div class="overlay" ng-click="showRequest()"></div>
+    <form class="request-form  tour-request  popup" 
+    name="tourRequestForm" novalidate ng-show="!answerState"
+    ng-submit="tourRequestForm.$valid && submitTourRequest()"> 
+        <span class="req-close" ng-click="showRequest()">×</span>
+        
+        <div class="request-greeting">
+            <span ng-if="!showTour">Let us find the tour for you</span>
+            <span ng-if="showTour">Tour booking</span>
+        </div>
+        
+        
+        <div class="rq-wrapper">
+            <label for="rq-name" title="required field">
+                Name<span class="attention-strong">*</span>
+            </label>
+            <input id="rq-name" type="text" pattern="^[А-Яа-яЁёA-Za-z\s]+$" 
+            maxlength="64" name="clientName" ng-model="tourRequest.clientName" 
+            required>
+            
+            <label for="rq-phone" title="required field">
+                Phone<span class="attention-strong">*</span>
+            </label>
+            <input id="rq-phone" type="tel" pattern="^[0-9\s\(\)\+\-]+$" 
+            maxlength="20" name="clientPhone" ng-model="tourRequest.clientPhone"
+            required>
+            
+            <label for="rq-mail">E-mail</label>
+            <input id="rq-mail" type="email" maxlength="64" 
+            name="clientEmail" ng-model="tourRequest.clientMail">
+            
+            <label ng-if="showTour">Tour ID</label>
+            <input type="text" name="tourId" ng-if="showTour" 
+            ng-model="tourRequest.tourId" readonly>
+            <div class="gasket" ng-if="!showTour"></div>
+            
+            <label for="rq-text">Your comment</label>
+            <textarea id="rq-text" maxlength="1000"
+            name="clientComment" ng-model="tourRequest.clientComment">
+            </textarea>
+            
+            <div class="buttons-block">
+                <button class="neutral-btn" ng-click="showRequest()">
+                Cancel</button>
+                
+                <button class="success-btn" type="submit"
+                ng-disabled="tourRequestForm.$invalid">Send</button>
+            </div>
+        </div>
+    </form>
+    
+    <div class="request-form  tour-request  popup  answer" 
+    ng-show="answerState">
+        <span class="req-close" ng-click="showRequest()">×</span>
+        <div class="request-greeting">
+            <span ng-if="!showTour">Let us find the tour for you</span>
+            <span ng-if="showTour">Tour booking</span>
+        </div>
+        <p ng-bind-html="requestAnswer"></p>
+        <div class="buttons-block">
+            <button class="success-btn" ng-click="showRequest()">Close
+            </button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,296 @@
+/*
+ * For index.less
+*/
+/*------------------------------------*\
+    #SECTION-TOUR
+\*------------------------------------*/ 
+
+/*  tour details  */
+.tours-wrapper {
+    .tour-promo {
+        margin-left: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    h2.tour-promo {
+        margin-top: 20px;
+        margin-bottom: 7px;
+        font-size: 1.5rem;
+    }
+    
+    .h2.tour-promo {
+        font-size: 1.4rem;
+    }
+}
+        
+        
+/*  tour order button  */
+.order {
+    margin: 25px 0 0 25px;
+    text-align: right;
+    
+    
+    button {
+    width: 100%;
+    max-width: 500px;
+    height: 55px;
+    padding-left: 30px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 50px;
+   }
+}
+        
+        
+/*  tour details  */
+.tour-details {
+    margin: 40px 0 40px 25px;
+    
+    
+    h3 {
+        display: inline-block;
+    }
+    
+    
+    .brief-info {
+        display: table-cell;
+        height: 50px;
+        padding-left: 10px;
+        vertical-align: middle;
+    }
+    
+        .brief-info span {
+            text-transform: capitalize;
+            background-color: transparent;
+        }
+    
+    
+    [class^="icon"] {
+        float: left;
+        height: 40px;
+        width: 40px;
+        margin-top: 5px;
+        background: url("../img/sprite-tour-grey.png") no-repeat;
+        background-size: 292px 40px;
+    }
+    
+    .icon-fly {
+        background-position: -1px 0px;
+    }
+    
+    .icon-hotel {
+        background-position: -43px 0px;
+    }
+    
+    .icon-accomodation {
+        background-position: -86px 0px;
+    }
+    
+    .icon-room {
+        background-position: -127px 0px;
+    }
+    
+    .icon-type {
+         background-position: -169px 0px;
+    }
+    
+    .icon-price {
+        background-position: -211px 0px;
+    }
+    
+    .icon-operator {
+        background-position: -253px 0px;
+    }
+    
+    
+    .note {
+        margin-top: 10px;
+        font-size: 0.75em;
+        color: #999999;
+    }
+    
+    
+    .visa {
+        margin-top: 10px;
+        font-size: 0.875em;
+        color: #C89600;
+    }
+}
+
+
+/*  hotel details visibility switch  */
+.hd-switch {
+    margin-left: 25px;
+
+
+    .hd-open, .hd-close {
+        color: #3c4899;
+        font-size: 0.875rem;
+        cursor : pointer;
+        
+        
+        &span {
+            font-size: 0.75rem;
+        }
+    }
+}
+
+
+/*  hotel details  */
+.hotel-details {
+    margin-top: 35px;
+    margin-left: 25px;
+    
+    
+    [class^="col"]:not(:last-child) {
+        margin-bottom: 20px;
+    }
+        
+        
+    [class^="col"] {
+        padding-right: 10px;
+    
+    
+        h2, ul {
+            margin-left: 50px;
+        }
+        
+        
+        li {
+            margin-left: 18px;
+        }
+    }
+
+    
+    p, ul, a {
+        font-size: 0.875rem;
+    }
+    
+    a {
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+        
+    .hotel-description {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        
+        
+        ul {
+            margin-top: 15px;
+        }
+    }
+    
+    
+    [class^="icon"] {
+        float: left;
+        height: 40px;
+        width: 40px;
+        margin-top: 5px;
+        background: url("../img/sprite-hotel-grey.png") no-repeat;
+        background-size: 530px 40px;
+    }
+    
+    
+    .icon-site {
+        background-position: -450px 0px;
+    }
+    
+    .icon-distance {
+        background-position: -405px 0px;
+    }
+    
+    .icon-in-room {
+        background-position: -360px 0px;
+    }
+    
+    .icon-available {
+        background-position: -315px 0px;
+    }
+    
+    .icon-food {
+        background-position: -490px 0px;
+    }
+    
+    .icon-territory {
+        background-position: -270px 0px;
+    }
+    
+    .icon-pool {
+        background-position: -225px 0px;
+    }
+    
+    .icon-children {
+        background-position: -180px 0px;
+    }
+    
+    .icon-services {
+        background-position: -135px 0px;
+    }
+    
+    .icon-beauty {
+        background-position: -90px 0px;
+    }
+    
+    .icon-party {
+        background-position: -45px 0px;
+    }
+    
+    .icon-sport {
+        background-position: 0px 0px;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-GENERAL-INFO
+\*------------------------------------*/
+
+.general-info {
+    margin-top: 30px;
+    padding-top: 35px;
+    padding-left: 25px;
+    background-color: @c-bg-info;
+    font-size: 0.75rem;
+
+    li {
+        margin-left: 15px;
+        margin-bottom: 2px;
+    }
+    
+    div {
+        margin-top: 35px;
+        padding: 35px 0;
+        border-top:  1px solid @c-border;
+    }
+}
+/* GENERAL-INFO-END */
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-PRELOAD
+\*------------------------------------*/
+
+.preload {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    width: 300px;
+    margin-top: -50px;
+    margin-left: -150px;
+    line-height: 90px;
+    border: 1px solid @c-border;
+    background-color: lighten(@c-border, 15%);
+    text-align: center;
+    font-size: 2rem;
+}
+/* PRELOAD-END */
+/* TOUR-END */

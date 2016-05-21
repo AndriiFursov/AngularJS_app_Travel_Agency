@@ -1,0 +1,49 @@
+<section>
+    <div class="overlay" ng-click="showLogin()"></div>
+    <form class="login-form  tour-request  popup" name="loginForm" novalidate
+    ng-submit="loginForm.$valid && submitLoginRequest()"> 
+        <span class="req-close" ng-click="showLogin()">×</span>
+        
+        <div class="request-greeting">
+            <p ng-show="!loginAnswer">
+                <b>Hello! Fill your username and password<br> 
+                if you are "COK travel" manager.</b>
+            </p>
+            <p ng-show="loginAnswer && !loginAnswer.success">
+                <b class="attention-strong">ERROR!<br>
+                Check you username and password!</b>
+            </p>
+            <p ng-show="loginAnswer.success">
+                <b>Now you logged on!<br>
+                Press "Next" button for continue.</b>
+            </p>
+        </div>
+        
+        <div class="rq-wrapper">
+            <label for="rq-name" title="required field">
+                Username:
+            </label>
+            <input id="rq-name" type="text" pattern="^[А-Яа-яЁёA-Za-z\s]+$" 
+            maxlength="64" name="login" ng-model="loginRequest.login" 
+            required  ng-show="!loginAnswer.success">
+            <input type="text" placeholder="******" disabled 
+            ng-show="loginAnswer.success">
+            
+            <label for="rq-phone" title="required field">
+                Password:
+            </label>
+            <input id="rq-phone" type="password"
+            maxlength="20" name="password" ng-model="loginRequest.password"
+            required ng-show="!loginAnswer.success">
+            <input type="text" placeholder="******" disabled 
+            ng-show="loginAnswer.success">
+        </div>
+            
+        <div class="buttons-block">
+            <button class="success-btn" ng-show="!loginAnswer.success" 
+            type="submit" ng-disabled="loginForm.$invalid">Log in</button>
+            <button class="success-btn" ng-click="logedOn()" type="button"
+            ng-show="loginAnswer.success">Next</button>
+        </div>
+    </form>
+</section>

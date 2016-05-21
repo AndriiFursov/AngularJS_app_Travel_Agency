@@ -1,0 +1,148 @@
+/**
+ * For index.less
+ * Screens adaptation
+ */
+ 
+/*------------------------------------*\
+    #SECTION-RESPONSIVE
+\*------------------------------------*/
+
+@media only screen and (min-width: 750px) {
+    header {
+        .btn:not(:first-child) {
+            padding-left: 25px;
+            
+            
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 920px) {
+    [class*=mobo-] {
+        top: 3px;
+        margin-right: 3px;
+        width: 14px;
+        height: 14px;
+    }
+
+
+    header {
+        .contacts {
+            font-size: 0.843rem;
+            line-height: 1.2rem;
+            
+            
+            >div:not(:last-child) {
+                float: left;
+                margin: 0 10px 5px 0;
+            }
+            
+            :last-child {
+                clear: both;
+                font-size: 0.843rem;
+            }
+        }
+    }
+    
+    
+    .countries-list {
+        li:not(:first-child) {
+            width: 25%;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1050px) {
+    aside {
+        button {
+            font-size: 1.125rem;
+            font-weight: normal;
+            color: @c-txt-button;
+            
+            span{
+                font-size: 0.75rem;
+            }
+        }
+    }
+    
+    
+    header {
+        .contacts {
+            font-size: 0.843rem;
+            font-weight: bold;
+            line-height: 1.2rem;
+        }
+        
+        
+        .btn {
+            button {
+                font-size: 1rem;
+                font-weight: normal;
+                color: @c-txt-button;
+            }
+        }
+    }
+    
+    
+    .countries-list {
+        li:not(:first-child) {
+            width: 20%;
+        }
+    }
+    
+    
+    footer {
+        padding-top: 20px;
+        
+        
+        .copyright {
+            float: left;
+        }
+        
+        
+        .developer {
+            float: right;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    [class*=mobo-] {
+        margin-right: 3px;
+        width: 16px;
+        height: 16px;
+    }
+
+
+    header {
+        .contacts {
+            font-size: 1rem;
+            line-height: 1.2rem;
+            
+            
+            >div:not(:last-child) {
+                float: left;
+                margin: 0 10px 5px 0;
+            }
+            
+            :last-child {
+                clear: both;
+                font-size: 0.843rem;
+            }
+        }
+    }
+    
+    
+    .countries-list {
+        li:not(:first-child) {
+            width: 16%;
+        }
+    }
+}
+/* RESPONSIVE-END */

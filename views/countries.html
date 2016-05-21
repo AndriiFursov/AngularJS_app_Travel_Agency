@@ -1,0 +1,17 @@
+            <ul class="countries-list">
+                <li>
+                    <div ng-click="selectType()">
+                        <img src="img/countries/all.png" alt="country" 
+                        title="Все страны">
+                        <span>All countries</span>
+                    </div>
+                    <hr>
+                </li>
+                
+                <li ng-repeat="country in countries()">
+                    <div ng-click="selectType(country.id)">
+                        <img ng-src="img/countries/{{country.id}}.png" alt="country" title="{{country.name}}">
+                        <span>{{country.name}}</span>
+                    </div>
+                </li>
+            </ul>

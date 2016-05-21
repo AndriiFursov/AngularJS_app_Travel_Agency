@@ -1,0 +1,189 @@
+<!-- carousel -->
+<section class="carousel__wrapper">
+    <div>
+         <ul resize-slides-directive>
+            <li ng-repeat="slide in hotel.photos" 
+            ng-show="isActive(slide)">
+                <img ng-src="tour-img/{{slide}}" height="auto" width="auto" alt="tour image">
+            </li>
+        </ul>
+        
+        <div class="carousel__left" ng-click="showNext(-1)" 
+        ng-show="hotel.photos.length > 1">
+            <img alt="Прокрутить влево" src="img/carousel/carousel-left.png"
+            title="Прокрутить влево" height="40px">
+        </div>   
+        
+        <div class="carousel__right" ng-click="showNext(+1)" 
+        ng-show="hotel.photos.length > 1"> 
+            <img alt="Прокрутить вправо" src="img/carousel/carousel-right.png"
+            title="Прокрутить вправо" height="40px">                          
+        </div>
+        
+        <ul class="carousel__controls" ng-show="hotel.photos.length > 1"> 
+            <li ng-repeat="slide in hotel.photos" ng-class="{active: isActive(slide)}" ng-click="setActive(slide)"></li>
+        </ul>
+    </div>
+</section>
+    
+    
+    
+    
+    
+<h2 class="tour-promo" ng-cloak>
+    {{tour.countryname}}! {{tour.city}}, <span class="attention-strong"> {{tour.price}} {{tour.currency}}</span>
+</h2>
+<div class="tour-promo  h2" ng-cloak> 
+    Departure from {{tour.from}} {{tour.departure}} for {{tour.duration}} days
+</div>
+
+
+<div class="order">
+<button type="button" class="tour-order" ng-click="showRequest()">
+    The tour booking
+</button>
+</div>
+
+
+<!-- tour info block -->        
+<section class="tour-details">   
+    <div class="row">        
+        <div>
+            <div class="icon-fly"></div>
+            <div class="brief-info">
+                Departure from {{tour.from}} <b>{{tour.departure}}</b>
+                for {{tour.duration}} days/{{tour.duration - 1}} nights
+            </div>
+        </div>
+        
+        <div>
+            <div class="icon-hotel"></div>
+            <div class="brief-info">
+                <h3>Hotel:</h3> {{tour.hotel}}
+            </div>
+        </div>
+        
+        <div>
+            <div class="icon-accomodation"></div>
+            <div class="brief-info">
+                <h3>Accomodation:</h3> {{tour.accomodation}}
+            </div>
+        </div>
+        
+        <div>
+            <div class="icon-room"></div>
+            <div class="brief-info">
+                <h3>Room:</h3> {{tour.room}}
+            </div>
+        </div>
+        
+        <div>
+            <div class="icon-type"></div>
+            <div class="brief-info">
+                <h3>Tour type:</h3>
+                <span class="{{tour.type}}  txt">
+                    {{tour.typerus}}
+                </span>
+            </div>
+        </div>
+        
+        <div>
+            <div class="icon-price"></div>
+            <div class="brief-info">
+                <h3>Price:</h3>
+                {{tour.price}} {{tour.currency}}
+            </div>
+        </div>
+
+        <div ng-if="loggedUser">
+            <div class="icon-operator"></div>
+            <div class="brief-info">
+                <h3>Operator:</h3> {{tour.operator}}
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <b>The price includes: </b> The international transfer, transfer to hotel, accommodation at the hotel with a specified power, medical insurance.
+    </div>
+    
+    <div class="visa">
+        <strong>{{tour.visa}}</strong>
+    </div>
+</section>
+
+    
+    
+        
+<!-- hotel details info block -->   
+     
+<div class="hd-switch">
+    <div class="hd-open" ng-show="!showDetails"
+    ng-click="showDetails = !showDetails">
+        Hotel details <span>&#9660;</span>
+    </div>
+    <div class="hd-close" ng-show="showDetails"
+    ng-click="showDetails = !showDetails">
+        Hide <span>&#9650;</span>
+    </div>
+</div>
+
+<section class="row hotel-details" ng-show="showDetails">
+<!-- hotel's site -->
+    <div ng-show="hotel.site">
+        <div class="icon-site"></div>
+        <h2 class="brief-info">Site:</h2>
+        <a href="{{hotel.site}}" target="_blank">{{hotel.site}}</a>
+    </div>
+
+<!-- hotel description -->
+    <div ng-show="hotel.description||hotel.build[0]" 
+    class="hotel-description">
+        <h2>About:</h2>
+        
+        <p ng-bind-html="hotel.description"></p>
+        
+        <ul ng-show="hotel.build[0]">
+            <li ng-repeat="elem in hotel.build">{{elem}}</li>
+        </ul>
+    </div>
+ 
+<!-- other hotel properties -->
+    <div class="col-min-12  col-920-6  col-1200-4" 
+    ng-repeat="prop in hotel.other" ng-show="prop.arr[0]">
+        <div class="icon-{{prop.code}}"></div>
+        <h2 class="brief-info">{{prop.name}}</h2>
+        <ul>
+            <li ng-repeat="elem in prop.arr" >{{elem}}</li>
+        </ul>
+    </div>
+</section>
+    
+    
+    
+    
+    
+<section class="general-info">
+    <ul>
+        <li>Relevance of this proposal check with our managers! </li>
+        
+        <li class="attention--strong">The price is for 1 person with a 2-bed rooms (for only 1 person in 2-bed room price will be higher, check with our managers)
+        </li>
+        
+        <li>Payment in local currency at the exchange rate</li>
+        
+        <li>We can count the cost of the hotel on any date of departure and at any number of days</li>
+    </ul>
+
+    <div class="attention-strong">
+        THERE ISN'T FINAL LIST OF PROPOSALS ON OUR SITE! CHECK NEW PROPOSALS WITH OUR MANAGERS!
+    </div>
+</section>
+
+
+
+
+
+<div class="preload" ng-if="!dataLoaded">
+    Loading...
+</div>

@@ -1,0 +1,272 @@
+/*
+ * For index.less
+ * Main colors and decoration
+*/
+/*------------------------------------*\
+    #SECTION-VIEW
+\*------------------------------------*/
+
+// mixin
+.borders {
+    border: 4px solid @c-hot;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 3px #666666;
+       -moz-box-shadow: 2px 2px 3px #666666;
+            box-shadow: 2px 2px 3px #666666;
+}
+
+
+
+
+
+aside .filters {
+    background: linear-gradient(to right, transparent, #e6e6e6); 
+}
+
+
+.header__bottom {
+    background: linear-gradient(to right, transparent, transparent, #e6e6e6);
+}
+
+
+
+
+
+button, .presentation {
+    position: relative;
+    .borders;
+            
+    &:hover {
+        top:  -1px;
+        left: -1px;
+        -webkit-box-shadow: 3px 3px 3px #666666;
+           -moz-box-shadow: 3px 3px 3px #666666;
+                box-shadow: 3px 3px 3px #666666;
+    }
+    
+    
+    &:active, &.active, &.active:hover {
+        top:  2px;
+        left: 2px;
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+    }
+    
+    
+    &[disabled] {
+        &:hover {
+            top:  0px;
+            left: 0px;
+            -webkit-box-shadow: 2px 2px 3px #666666;
+               -moz-box-shadow: 2px 2px 3px #666666;
+                    box-shadow: 2px 2px 3px #666666;
+        }
+    }
+}
+
+
+.popup {
+    .borders;
+}
+
+
+
+
+
+.about {
+    border-color: @c-about;
+}
+
+button.about {
+    background: linear-gradient(to bottom, @c-about, white, white, @c-about);
+    
+    &.active {
+        background: @c-about;
+    }
+}
+
+
+.blog {
+    border-color: @c-blog;
+}
+
+button.blog {
+    background: linear-gradient(to bottom, @c-blog, white, white, @c-blog);
+}
+
+
+.tour-request, .tour-order {
+    border-color: @c-request;
+    background-color: @c-hotest-grad;
+
+
+    .request-greeting {
+        background: linear-gradient( to bottom, @c-hotest, @c-hotest-grad);
+    }
+}
+
+button.tour-request {
+    background: linear-gradient(to bottom, @c-request, white, 
+                                white, @c-request);
+}
+
+button.tour-order {
+    background: url("../img/call-green.png") no-repeat left center, 
+                linear-gradient(to bottom, @c-request, 
+                white, white, @c-request);
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        button.tour-request {
+            padding-left: 50px;
+            background: url("../img/call-green.png") no-repeat left center, 
+                        linear-gradient(to bottom, @c-request, 
+                        white, white, @c-request);
+        }
+        
+        button.go-home {
+            padding-left: 50px;
+            background: url("../img/go-back.png") no-repeat left center, 
+                        linear-gradient(to bottom, @c-country, 
+                        white, white, @c-country);
+        }
+    }
+}
+
+
+
+
+.hotest {
+    border-color: @c-hotest;
+    background-color: @c-hotest-grad; 
+    
+    &.txt {
+        color:  @c-hotest;
+    }
+    
+    .presentation__header {
+        background: linear-gradient( to bottom, @c-hotest, @c-hotest-grad);
+    }
+}
+
+button.hotest {
+    background: linear-gradient(to bottom, @c-hotest, white, white, @c-hotest);
+    
+    &.active {
+        background: @c-hotest;
+    }
+}
+
+
+.hot {
+    border-color: @c-hot;
+    background-color: @c-hot-grad;
+    
+    .presentation__header {
+        background: linear-gradient( to bottom, @c-hot, @c-hot-grad);
+    }
+    
+    &.txt {
+        color:  @c-hot;
+    }
+}
+
+button.hot {
+    background: linear-gradient(to bottom, @c-hot, white, white, @c-hot);
+    
+    &.active {
+        background: @c-hot;
+    }
+}
+
+
+.premium {
+    border-color: @c-premium;
+    background-color: @c-premium-grad;
+    
+    .presentation__header {
+        background: linear-gradient( to bottom, @c-premium, @c-premium-grad);
+    }
+    
+    &.txt {
+        color:  @c-premium;
+    }
+}
+
+button.premium {
+    background: linear-gradient(to bottom, @c-premium, white, 
+                                white, @c-premium);
+    
+    &.active {
+        background: @c-premium;
+    }
+}
+
+
+.extrim {
+    border-color: @c-extrim;
+    background-color: @c-extrim-grad;
+    
+    .presentation__header {
+        background: linear-gradient( to bottom, @c-extrim, @c-extrim-grad);
+    }
+    
+    &.txt {
+        color:  @c-extrim;
+    }
+}
+
+button.extrim {
+    background: linear-gradient(to bottom, @c-extrim, white, white, @c-extrim);
+    
+    &.active {
+        background: @c-extrim;
+    }
+}
+
+
+.country {
+    border-color: @c-country;
+}
+
+button.country {
+    background: linear-gradient(to bottom, @c-country, white, 
+                                white, @c-country);
+    
+    &.active {
+        background: @c-country;
+    }
+}
+
+
+.success-btn {
+    border-color: @c-request;
+}
+
+button.success-btn {
+    background: linear-gradient(to bottom, @c-request, white, 
+                                white, @c-request);
+}
+
+
+.neutral-btn {
+    border-color: @c-country;
+}
+
+button.neutral-btn {
+    background: linear-gradient(to bottom, @c-country, white, 
+                                white, @c-country);
+}
+
+
+
+
+
+.attention-strong {
+    color: @c-txt-attention-s;
+}
+/* VIEW-END */
